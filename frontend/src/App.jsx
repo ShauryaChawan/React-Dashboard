@@ -3,35 +3,33 @@ import {
   CustomerDetailsCard,
   DailySalesTrendCard,
   LocationCard,
-  TopSoldProductsCard
-} from "./components/cards/cards";
-
+  TopSoldProductsCard,
+} from "./components/cards/cardIndex";
+import Card from "./components/cards/Card";
 import Header from "./components/header/Header";
-import Stats from "./components/stats/Stats";
+import "./App.scss";
 
 const App = () => {
   return (
-    <>
+    <div className="main-container">
       {/* Top */}
-      <div className="top">
-        {/* Header */}
-        <Header/>
-        {/* Stats */}
-        <Stats/>
-        {/* Body */}
-      </div>
+      <Header />
 
-      <div className="body">
-        {/* Location Card */}
-        <LocationCard/>
-        {/* Top Sold Products Card */}
-        <TopSoldProductsCard/>
-        {/* Customer Details Card */}
-        <CustomerDetailsCard/>
-        {/* Daily Sales Trend Card */}
-        <DailySalesTrendCard/>
+      <div className="grid-container">
+        <Card>
+          <LocationCard />
+        </Card>
+        <Card>
+          <TopSoldProductsCard />
+        </Card>
+        <Card>
+          <CustomerDetailsCard />
+        </Card>
+        <Card>
+          <DailySalesTrendCard />
+        </Card>
       </div>
-    </>
+    </div>
   );
 };
 
